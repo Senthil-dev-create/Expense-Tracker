@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Expense Tracker</h1>
+
+        <!-- Menu for Switching between Expense Entry, Summary, and Monthly Summary -->
+        <div class="menu">
+            <button id="show-expenses">Add Expense</button>
+            <button id="show-summary">Summary</button>
+            <button id="show-monthly-summary">Monthly Summary</button>
+        </div>
+
+        <!-- Add Expense Form (Initially Hidden) -->
+        <div id="expense-form-container" class="form-section" style="display: none;">
+            <h2>Add Expense</h2>
+            <form id="expense-form">
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" required>
+
+                <label for="description">Description:</label>
+                <input type="text" id="description" required>
+
+                <button type="submit">Add Expense</button>
+            </form>
+            <div id="expense-message" class="message-box"></div>
+        </div>
+
+        <!-- Summary Sheet (Initially Hidden) -->
+        <div id="summary-container" class="summary-section" style="display: none;">
+            <h2>Summary</h2>
+
+            <!-- Button to Delete Selected Expenses -->
+            <button id="delete-selected" style="margin-bottom: 10px;">Delete Selected</button>
+
+            <table id="expense-table">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Expense rows will be inserted here -->
+                </tbody>
+            </table>
+            <div id="delete-message" class="message-box"></div>
+        </div>
+
+        <!-- Monthly Summary (Initially Hidden) -->
+        <div id="monthly-summary-container" class="monthly-summary-section" style="display: none;">
+            <h2 id="monthly-header">Monthly Summary</h2>
+            <table id="monthly-summary-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Total Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Monthly summary rows will be inserted here -->
+                </tbody>
+            </table>
+            <div id="monthly-message" class="message-box"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
